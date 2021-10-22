@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Bienvenue dans le monde merveilleux des Licornes</title>
+</head>
+<style media="screen">
+  @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+  body {
+    min-width: 100vw;
+    min-height: 100vh;
+    background-color: #eaed24;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  h1 {
+    font-size: 7em;
+    color: #e82020;
+    font-family: 'Dancing Script', cursive;
+  }
+</style>
+<body>
+  <h1 id="title"></h1>
+  <img src="finger.jpg" alt="finger">
+  <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+  <script type="text/javascript">
+    var showText = function (target, message, index, interval) {
+      if (index < message.length) {
+        $(target).append(message[index++]);
+        setTimeout(function () { showText(target, message, index, interval); }, interval);
+      }
+    }
+    $(function () {
+      showText("#title", "LAM EST UN LOSER", 0, 200);
+    });
+  </script>
+</body>
+</html>
